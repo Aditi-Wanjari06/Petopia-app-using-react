@@ -5,10 +5,11 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 const app = express()
-app.use(express())
+app.use(express.json())
 app.use(cors())
 
 import { postSignUp } from './controllers/user.js'
+
 
 const connectDB = async () => {
     const conn = await mongoose.connect(process.env.MONGODB_URL)
