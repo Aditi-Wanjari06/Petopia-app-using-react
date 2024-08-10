@@ -8,7 +8,7 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-import { postSignUp } from './controllers/user.js'
+import { postLogin, postSignUp } from './controllers/user.js'
 
 
 const connectDB = async () => {
@@ -28,7 +28,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/signup", postSignUp);
-
+app.post("/login",postLogin)
 
 
 
